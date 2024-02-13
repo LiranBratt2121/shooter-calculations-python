@@ -73,6 +73,18 @@ class ProjectileSolver:
         - For the ease of calculation the function transfers the theta_guess into radians inside of itself.
         """
         self.initial_guess = [np.radians(theta_guess), v0_guess]
+       
+    def update_deltas(self, delta_x: float, delta_y: float) -> None:
+        """
+        ## Update the horizontal and vertical displacements to the target.
+        ----
+        Args:
+        ----
+            - delta_x (float): New horizontal displacement to the target.
+            - delta_y (float): New vertical displacement to the target.
+        """
+        self.delta_x = delta_x
+        self.delta_y = delta_y
 
     def projectile_equation(self, params: list, *args: tuple):
         """
